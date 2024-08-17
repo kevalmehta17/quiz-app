@@ -25,8 +25,11 @@ function reducer(state, action) {
 export default function App() {
   const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
 
+  //For fetching Data the command is :- npm run server
+  //For start React app the command is :- npm start
+
   useEffect(() => {
-    fetch("http://localhost:5000/questions")
+    fetch("http://localhost:9000/questions")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
