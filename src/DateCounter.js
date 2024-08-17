@@ -19,7 +19,12 @@ function DateCounter() {
   };
 
   const defineCount = function (e) {
-    setCount(Number(e.target.value));
+    const value = e.target.value;
+    if (value === "") {
+      setCount(0);
+    } else {
+      setCount(Number(value));
+    }
   };
 
   const defineStep = function (e) {
