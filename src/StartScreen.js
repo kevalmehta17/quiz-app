@@ -1,9 +1,16 @@
-export default function StartScreen() {
+export default function StartScreen({ numQuestions, dispatch }) {
   return (
     <div className="start">
-      <h3>Welcome to the React Quiz</h3>
-      <p>X question test your React Mastery</p>
-      <button>Let's Start</button>
+      <h2>Welcome to the React Quiz</h2>
+      <h3>{numQuestions} question test your React Mastery</h3>
+      <button
+        className="btn btn-ui"
+        onClick={() => {
+          dispatch({ type: "start" });
+        }}
+      >
+        Let's Start
+      </button>
     </div>
   );
 }
