@@ -25,11 +25,13 @@ function reducer(state, action) {
       return { ...state, status: "error" };
     case "start":
       return { ...state, status: "active" };
+
+    //this below case that checked and updating the points & also update the answer in the state
     case "newAnswer":
-      const question = state.questions.at(state.index); //here the current state
+      const question = state.questions.at(state.index); // Accesses the current question
       return {
         ...state,
-        answer: action.payload, //here it storing  the option-index of answer
+        answer: action.payload, // Stores the selected option's index as the answer and it updates the answer in initial state object
         points:
           action.payload === question.correctOption
             ? state.points + question.points
