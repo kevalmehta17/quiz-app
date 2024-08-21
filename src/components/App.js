@@ -31,7 +31,7 @@ function reducer(state, action) {
       const question = state.questions.at(state.index); // Accesses the current question
       return {
         ...state,
-        answer: action.payload, // Stores the selected option's index as the answer and it updates the answer in initial state object
+        answer: action.payload, // Stores the selected option's index as the answer
         points:
           action.payload === question.correctOption
             ? state.points + question.points

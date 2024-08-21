@@ -1,4 +1,4 @@
-function NextButton({ dispatch, answer }) {
+export default function NextButton({ dispatch, answer }) {
   if (answer == null) return;
   return (
     <button
@@ -9,5 +9,3 @@ function NextButton({ dispatch, answer }) {
     </button>
   );
 }
-
-export default NextButton;
